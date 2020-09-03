@@ -1,0 +1,858 @@
+    /* css reset */
+    
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+    }
+    
+    body {
+        line-height: 1;
+    }
+    
+    ol,
+    ul {
+        list-style: none;
+    }
+    
+    blockquote,
+    q {
+        quotes: none;
+    }
+    
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    /* STYLE */
+    
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .container {
+        margin: 0 20px;
+        margin-bottom: 50px;
+        padding: 16px;
+    }
+    
+    .jumbotron {
+        background-size: cover;
+        height: 150px;
+        background-image: url(img/26572.jpg);
+        background-position-y: 60%;
+        /* background: linear-gradient(217deg, rgba(0, 102, 255, 0.8), rgba(93, 109, 153, 0.719) 90.71%), linear-gradient(127deg, rgba(0, 174, 255, 0.8), rgba(0, 204, 255, 0) 70.71%), linear-gradient(336deg, rgb(255, 255, 255), rgba(39, 108, 187, 0.384) 70.71%); */
+        background-repeat: no-repeat;
+    }
+    
+    .navbar {
+        background-color: rgb(42, 93, 202);
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 35px;
+        z-index: 10;
+        box-sizing: border-box;
+    }
+    
+    .navbar ul li {
+        display: inline-block;
+        margin: 0 8px;
+    }
+    
+    .navbar a {
+        text-decoration: none;
+        font-size: 8px;
+        color: white;
+    }
+    
+    .sticky {
+        position: fixed;
+        top: 0;
+    }
+    
+    .sticky+.container {
+        padding-top: 0;
+    }
+    
+    .materi {
+        margin: 40px 10px 0;
+        color: rgb(0, 0, 0);
+    }
+    
+    .materi h1 {
+        font-size: 20px;
+    }
+    
+    .materi h1,
+    .materi h2,
+    .materi h3 {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .materi h2 {
+        font-size: 8px;
+        background-color: rgb(42, 93, 202);
+        width: fit-content;
+        padding: 7px;
+        color: white;
+    }
+    
+    .materi .soal {
+        margin: 10px 0;
+        padding: 15px;
+        padding-bottom: 15px;
+    }
+    
+    .materi .soal h3 {
+        background-color: rgba(138, 185, 255, 0.575);
+        width: fit-content;
+        padding: 2px 3px;
+        font-size: 8px;
+        color: black;
+    }
+    
+    .materi img {
+        width: 70%;
+        background-color: rgb(186, 227, 252);
+        padding: 10px;
+        border-left: 1px solid rgb(13, 79, 202);
+        margin: 20px auto;
+    }
+    
+    .materi p,
+    .materi dl dd,
+    .materi dl dt,
+    .materi ul li,
+    .materi h5 {
+        text-align: justify;
+        font-size: 8px;
+        line-height: 15px;
+    }
+    
+    .materi dl dd,
+    .materi h5 {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    
+    .materi dl dd:first-child {
+        margin-top: 5px;
+    }
+    
+    .materi ul li {
+        list-style: disc;
+        margin-left: 15px;
+    }
+    
+    .materi span {
+        font-weight: bold;
+    }
+    
+    .materi hr {
+        width: 88%;
+        height: 2px;
+        background-color: cornflowerblue;
+        border: none;
+    }
+    
+    footer {
+        background-color: rgb(15, 15, 37);
+        color: rgba(138, 185, 255, 0.575);
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+    }
+    /* Daftar */
+    
+    .left {
+        background-color: rgba(185, 210, 255, 0.705);
+        border-left: solid 3px rgb(13, 79, 202);
+        display: inline-block;
+        font-size: 8px;
+        line-height: 18px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        /* background-color: rgb(128, 107, 107); */
+    }
+    
+    .left section.profil img {
+        width: 30%;
+    }
+    
+    .left section.profil {
+        margin-bottom: 30px;
+    }
+    
+    .left section.profil ul {
+        display: inline-block;
+        margin-left: 5%;
+        position: relative;
+        bottom: 10px;
+    }
+    
+    section.daftar ul {
+        padding: 0 15px;
+    }
+    
+    section.daftar ul li {
+        list-style: square;
+        text-align: left;
+        color: blue;
+    }
+    
+    section.daftar h4 {
+        font-size: 13px;
+        text-align: center;
+        border-bottom: solid 1px black;
+        padding-bottom: 3px;
+        margin-bottom: 7px;
+        width: fit-content;
+    }
+    /* MENU HOME */
+    
+    .latar {
+        background-color: cornflowerblue;
+    }
+    
+    section.banner {
+        background-color: white;
+        border-top-left-radius: 0%;
+        border-bottom-right-radius: 70%;
+        box-shadow: 1px 1px 30px rgb(13, 79, 202);
+    }
+    
+    section.banner .info-umum {
+        margin: 90px auto 20px;
+        color: rgb(25, 78, 177);
+    }
+    
+    section.banner img {
+        width: 50%;
+        margin: 20px 9% 0;
+    }
+    
+    section.banner h1 {
+        font-weight: bold;
+        font-size: 23px;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 0 black;
+    }
+    
+    section.banner p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 3px;
+    }
+    
+    section.pembahasan h1 {
+        margin-top: 50px;
+        color: white;
+        margin-bottom: 20px;
+        font-size: 30px;
+        text-shadow: 1px 1px 1px black;
+    }
+    
+    section.pembahasan p {
+        color: white;
+        word-spacing: 2px;
+        line-height: 24px;
+    }
+    
+    section.pembahasan .container {
+        padding-bottom: 100px;
+        margin-bottom: 0;
+    }
+    
+    button img {
+        height: 30px;
+    }
+    
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        background-color: rgba(12, 12, 12, 0.295);
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+    
+    #myBtn:hover {
+        background-color: #555;
+    }
+    /* RESPONSIV */
+    
+    @media screen and (min-width: 425px) and (max-width: 760px) {
+        .left section.profil img {
+            width: 100px;
+        }
+        .left section.profil ul {
+            display: inline-block;
+            margin-left: 5%;
+            position: relative;
+            bottom: 20px;
+        }
+    }
+    
+    @media screen and (min-width: 761px) and (max-width: 1000px) {
+        .jumbotron {
+            height: 280px;
+        }
+        .navbar {
+            width: 100%;
+            height: 50px;
+            line-height: 30px;
+            z-index: 10;
+            padding-left: 44px;
+        }
+        .navbar ul li {
+            display: inline-block;
+            margin: 10px 15px;
+        }
+        .navbar a {
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .materi {
+            margin: 100px 0 0 20px;
+            position: relative;
+            width: 66%;
+            display: inline-block;
+        }
+        .materi h1 {
+            font-size: 40px;
+            padding-top: 30px;
+        }
+        .materi h1,
+        .materi h2,
+        .materi h3 {
+            margin-bottom: 20px;
+        }
+        .materi h2 {
+            font-size: 20px;
+            padding: 10px;
+        }
+        .materi .soal {
+            margin: 20px 0;
+            padding: 30px;
+            padding-bottom: 50px;
+        }
+        .materi .soal h3 {
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+        .materi img {
+            width: 80%;
+            padding: 13px;
+        }
+        .materi p,
+        .materi dl dd,
+        .materi dl dt,
+        .materi ul li,
+        .materi h5 {
+            font-size: 12px;
+            line-height: 18px;
+        }
+        .materi dl dd,
+        .materi h5 {
+            margin-top: 24px;
+        }
+        .materi dl dd:first-child {
+            margin-top: 5px;
+        }
+        .materi ul li {
+            margin-left: 18px;
+        }
+        .materi hr {
+            width: 94%;
+            height: 4px;
+        }
+        /* Daftar */
+        .left {
+            margin-top: 130px;
+            width: 27%;
+            float: left;
+            margin-left: 20px;
+            position: relative;
+            padding: 10px;
+            font-size: 12px;
+            line-height: 25px;
+            text-align: center;
+        }
+        .left section.profil img {
+            width: 75%;
+            margin: 20px auto 30px;
+        }
+        .left section.profil {
+            margin-bottom: 50px;
+        }
+        .left section.profil ul {
+            margin: 0 auto;
+        }
+        section.daftar h4 {
+            display: block;
+            font-size: 17px;
+            border-bottom: double 2px black;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        /* MENU HOME */
+        section.banner .info-umum {
+            margin: 70px 50px 30px;
+            width: 70%;
+        }
+        section.banner img {
+            width: 40%;
+            margin-right: 100px;
+            float: right;
+        }
+        section.banner h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        section.banner p {
+            font-size: 24px;
+            line-height: 30px;
+        }
+        section.pembahasan {
+            margin: 0 50px;
+        }
+        section.pembahasan h1 {
+            margin-top: 70px;
+            margin-bottom: 30px;
+            font-size: 60px;
+        }
+        section.pembahasan p {
+            word-spacing: 5px;
+            line-height: 30px;
+            font-size: 25px;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+        section.pembahasan .container {
+            padding-bottom: 300px;
+            margin-bottom: 0;
+        }
+    }
+    
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .container {
+            margin: 0 50px;
+            margin-bottom: 50px;
+        }
+        .jumbotron {
+            height: 280px;
+        }
+        .navbar {
+            height: 50px;
+            line-height: 50px;
+            padding-left: 70px;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar a {
+            font-size: 15px;
+        }
+        .materi {
+            margin: 100px 0 0 50px;
+            position: relative;
+            width: 68%;
+            display: inline-block;
+        }
+        .materi h1 {
+            font-size: 40px;
+            padding-top: 30px;
+        }
+        .materi h1,
+        .materi h2,
+        .materi h3 {
+            margin-bottom: 20px;
+        }
+        .materi h2 {
+            font-size: 20px;
+            padding: 10px;
+        }
+        .materi .soal {
+            margin: 20px 0;
+            padding: 30px 0;
+            padding-bottom: 50px;
+        }
+        .materi .soal h3 {
+            padding: 2px 5px;
+            font-size: 15px;
+        }
+        .materi img {
+            width: 80%;
+            padding: 13px;
+        }
+        .materi p,
+        .materi dl dd,
+        .materi dl dt,
+        .materi ul li,
+        .materi h5 {
+            font-size: 15px;
+            line-height: 20px;
+        }
+        .materi dl dd,
+        .materi h5 {
+            margin-top: 25px;
+        }
+        .materi ul li {
+            margin-left: 18px;
+        }
+        .materi hr {
+            width: 97%;
+            height: 4px;
+        }
+        /* Daftar Isi */
+        .left {
+            margin-top: 130px;
+            width: 20%;
+            float: left;
+            margin-left: 20px;
+            padding: 10px;
+            font-size: 12px;
+            line-height: 25px;
+            text-align: center;
+        }
+        .left section.profil img {
+            width: 75%;
+            margin: 20px auto 30px;
+        }
+        .left section.profil ul {
+            margin: 0 auto;
+        }
+        .left section.profil {
+            margin-bottom: 50px;
+        }
+        section.daftar h4 {
+            display: block;
+            font-size: 17px;
+            text-align: center;
+            border-bottom: double 2px black;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        /* MENU HOME */
+        section.banner .info-umum {
+            /* background-color: violet; */
+            margin: 170px 0 400px;
+            width: 45%;
+            display: inline-block;
+        }
+        section.banner img {
+            margin: 100px 0;
+            width: 40%;
+            margin-right: 10%;
+            float: right;
+        }
+        section.banner h1 {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+        section.banner p {
+            font-size: 27px;
+            line-height: 30px;
+        }
+        section.pembahasan {
+            margin: 0 50px;
+        }
+        section.pembahasan h1 {
+            margin-top: 70px;
+            margin-bottom: 30px;
+            font-size: 60px;
+        }
+        section.pembahasan p {
+            word-spacing: 5px;
+            line-height: 30px;
+            font-size: 25px;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+        section.pembahasan .container {
+            padding-bottom: 300px;
+            margin-bottom: 0;
+        }
+        footer {
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+    
+    @media screen and (min-width: 1401px) {
+        .container {
+            margin: 0 100px;
+            margin-bottom: 50px;
+        }
+        .jumbotron {
+            height: 380px;
+        }
+        .navbar {
+            height: 65px;
+            line-height: 65px;
+            padding-left: 100px;
+        }
+        .navbar ul li {
+            margin: 0 20px;
+        }
+        .navbar a {
+            font-size: 23px;
+        }
+        .materi {
+            margin: 100px 0 0 50px;
+            position: relative;
+            width: 68%;
+            display: inline-block;
+        }
+        .materi h1 {
+            font-size: 55px;
+            padding-top: 30px;
+        }
+        .materi h1,
+        .materi h2,
+        .materi h3 {
+            margin-bottom: 25px;
+        }
+        .materi h2 {
+            font-size: 25px;
+            padding: 13px;
+        }
+        .materi .soal {
+            margin: 20px 0;
+            padding: 30px 0;
+            padding-bottom: 50px;
+        }
+        .materi .soal h3 {
+            padding: 2px 5px;
+            font-size: 22px;
+        }
+        .materi img {
+            width: 80%;
+            padding: 13px;
+        }
+        .materi p,
+        .materi dl dd,
+        .materi dl dt,
+        .materi ul li,
+        .materi h5 {
+            font-size: 23px;
+            line-height: 33px;
+        }
+        .materi dl dd,
+        .materi h5 {
+            margin-top: 25px;
+        }
+        .materi ul li {
+            margin-left: 18px;
+        }
+        .materi hr {
+            width: 97%;
+            height: 5px;
+        }
+        /* Daftar Isi */
+        .left {
+            margin-top: 130px;
+            width: 20%;
+            float: left;
+            margin-left: 20px;
+            padding: 10px;
+            font-size: 12px;
+            line-height: 25px;
+            text-align: center;
+        }
+        .left section.profil img {
+            width: 75%;
+            margin: 20px auto 30px;
+        }
+        .left section.profil ul {
+            margin: 0 auto;
+        }
+        .left section.profil {
+            margin-bottom: 50px;
+        }
+        section.daftar h4 {
+            display: block;
+            font-size: 22px;
+            text-align: center;
+            border-bottom: double 2px black;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            padding-top: 10px;
+            width: 100%;
+        }
+        /* MENU HOME */
+        section.banner .info-umum {
+            /* background-color: violet; */
+            margin: 170px 0 400px;
+            width: 45%;
+            display: inline-block;
+        }
+        section.banner img {
+            margin: 100px 0;
+            width: 40%;
+            margin-right: 10%;
+            float: right;
+        }
+        section.banner h1 {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+        section.banner p {
+            font-size: 27px;
+            line-height: 30px;
+        }
+        section.pembahasan {
+            margin: 0 50px;
+        }
+        section.pembahasan h1 {
+            margin-top: 70px;
+            margin-bottom: 30px;
+            font-size: 60px;
+        }
+        section.pembahasan p {
+            word-spacing: 5px;
+            line-height: 30px;
+            font-size: 25px;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+        section.pembahasan .container {
+            padding-bottom: 300px;
+            margin-bottom: 0;
+        }
+        footer {
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+    
+    .cf:before,
+    .cf:after {
+        content: " ";
+        display: table;
+    }
+    
+    .cf:after {
+        clear: both;
+    }
+    
+    .cf {
+        *zoom: 1;
+    }

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Datagram Protokol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="jumbotron"></div>
+        <div class="navbar" id="navbar">
+            <ul>
+                <li> <a href="index.html">Home</a> </li>
+                <li> <a href="tugas.html">Jaringan Komputer</a> </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Materi -->
+    <div class="container">
+        <section class="materi">
+            <h1> Jaringan Komputer </h1>
+            <h2> User Datagram Protokol </h2>
+
+            <div class="soal" id="satu">
+                <h3> Model Referensi TCP/IP </h3>
+                <p> &emsp;&emsp; TCP/IP Layer atau disebut dengan Transmission Control Protocol/Internet Protocol layer merupakan model komunikasi data yang dikempangkan oleh US Department of Defense (DoD) yang merepresentasikan komunikasi data antar peralatan
+                    jaringan dan antar jaringan. Protokol internet pertama kali dirancang pada tahun 1980-an. Akan tetapi di tahun 1990-an dimana internet semakin populer dan host yang semakin banyak, mulai bemunculan protokol yang hanya bisa digunakan
+                    oleh kalangan tertentu, atau protokol yang dibuat oleh pabrik tertentu yang belum tentu kompatibel dengan protokol lain dari pabrik yang lain pula. Sehingga pada akhirnya badan International Standart Organization (ISO) membuat standarisasi
+                    protokol yang saat ini dikenal dengan protokol model Open System Interconnection atau disingkat OSI. Model OSI ini manjadi referensi dan konsep dasar teori tentang cara kerja sebuah protokol. </p>
+                <p> &emsp;&emsp; Dalam perkembangannya TCP/IP digunakan sebagai standart de facto. Arsitektur TCP/IP tidaklah berbasis model referensi tujuh lapis OSI, tetapi menggunakan model referensi DARPA. TCP/IP mengimplemenasikan arsitektur berlapis
+                    yang terdiri atas empat lapis. Empat lapis ini, dapat dipetakan (meski tidak secara langsung) terhadap model referensi OSI. Empat lapis ini, kadang-kadang disebut sebagai DARPA Model, Internet Model, atau DoD Model, mengingat TCP/IP
+                    merupakan protokol yang awalnya dikembangkan dari proyek ARPANET yang dimulai oleh Departemen Pertahanan Amerika Serikat.</p>
+                <img src="img/model.png" alt="Model Referensi TCP/IP">
+                <h5>Macam-Macam Layer TCP/IP</h5>
+                <dl>
+                    <dd> Application Layer</dd>
+                    <dt>
+                        &emsp;&emsp;Berperan sebagai high-level protocol yang melakukan  proses representasi, encoding dan dialog control data. Juga menyediakan servis-servis terhadap software-software yang berjalan pada komputer. Tugas application layer disini adalah untuk mendefinisikan bagaimana sebuah browser bisa mengambil konten dari sebuah web server hingga akhirnya tampil di web browser. Protokol-protokol yang beroperasi pada Application Layer:
+                        <ul>
+                            <li>Domain Name Service Protocol (DNS) Menerjemahkan nama host menjadi alamat IP. 
+                            </li>
+                            <li>Hypertext -Transfer Protocol (HTTP) digunakan untuk mentransfer file Web dari World Wide Web. </li>
+                            <li>Simple Mail Transfer Protocol (SMTP) digunakan untuk mentransfer pesan email.</li>
+                            <li>Telnet, a terminal emulation protocol, digunakan untuk mengakses server atau peralatan jaringan jarak jauh </li>
+                            <li>File Transfer Protocol (FTP) Digunakan untuk transfer file secara interaktif antar sistem</li>
+                        </ul>
+                    </dt>
+                    <dd>Transport</dd>
+                    <dt>&emsp;&emsp; Transport layer di TCP/IP disebut juga sebagai Host-to-Host, fungsinya untuk membangun koneksi antar host. Misal antara komputer satu dengan yang lain, client dengan server. Transport Layer berfungsi menyediakan servis yang akan digunakan oleh Application Layer. Mempunyai 2 protokol utama yaitu TCP dan UDP. Pada Layer ini data diubah menjadi suatu paket data  dan menentukan metode pengiriman, flow control dan  error correction terhadap paket data.</dt>
+                    <dd>Internet</dd>
+                    <dt>&emsp;&emsp;Berperan untuk memberikan informasi alamat asal dan tujuan dari paket data dan menentukan jalur atau rute (routing) pengiriman paket data. Internet Protocol mendefinisikan 2 hal di IP Address yaitu Network Address ( wilayahnya ) dan Host Address ( Alamat Spesifiiknya ).</dt>
+                    <dd>Network Acces</dd>
+                    <dt>&emsp;&emsp;Layer ini sering juga disebut sebagai host-to-network Layer. Layer menangani semua komponen dan proses yang berkaitan dengan physical link, baik secara fisik maupun logical. Informasi mengenai Teknologi Jaringan yang digunakan juga ditentukan pada Layer ini. Pada layer ini terdapat protokol-protokol seperti ethernet pada LAN, PPP pada WAN, dan juga Frame Relay.</dt>
+                </dl>
+
+            </div>
+            <hr>
+
+            <div class="soal" id="dua">
+                <h3> Mengapa Model Referensi dibuat berlayer </h3>
+                <ul>
+                    <li>Setiap lapisan memiliki fungsi dan proses yang berbeda</li>
+                    <li>Membantu dalam perancangan protokol</li>
+                    <li>Membantu dalam pengembangan </li>
+                    <li>Mencegah perubahan kemampuan atau teknologi akibat perubahan lapisan di bawah atau atasnya </li>
+                    <li>Menyediakan satu bahasa untuk mendeskripsikan fungsi jaringan dan kemampuannya.</li>
+                </ul>
+                <p>
+
+                </p>
+            </div>
+            <hr>
+
+
+            <div class="soal" id="tiga">
+                <h3> Fungsi Layer Transport </h3>
+                <dl>
+                    <dd> Menerima data dari session layer</dd>
+                    <dt>
+                        &emsp;&emsp;Fungsi pertama dari transport layer ini adalah menerima data yang dikirimkan melalui session layer. Seperti kita ketahui, bahwa keseluruhan model OSI ini merupakan satu kesatuan, sehingga setiap kegiatan yang berjalan di dalam Model Referensi OSI ini adalah berkesinambungan. Begitu pula dengan proses transmisi data. Data yang sdah melewati layer session, kemudian diteruskan ke transport layer, untuk kemudian diteruskan lagi menuju layer-layer berikutnya. 
+                    </dt>
+                    <dd>Memecah data menjadi bagian-bagian yang lebih kecil</dd>
+                    <dt>&emsp;&emsp; Disinilah fungsi utama lainnya dari transport layer. Ya, transport layer memiliki fungsi utama untuk memecah data atau peket data ke dalam bentuk-bentuk paket yang lebih kecil. Proses ini dilakukan untuk mempermudah proses pengiriman alias transmisi data yang berjalan di dalam jaringan komputer tersebut. Dengan adanya proses pemecahan data ini, maka setiap data diyakini tidak akan mengalami corrupt , atau mengalami proses trasnmisi yang sangat lamabt akibat besarnya ukuran data yang ada.</dt>
+                    <dd>Meneruskan data ke network layer</dd>
+                    <dt>&emsp;&emsp;Netwok layer jaringan komputer merupakan salah satu lapisan yang bertugas untuk memberikan header pada paket data yang sudah dipecah. Nah, ketika paket data tersebut sudah dipecah-pecah di dalam transport layer, maka kemudian paket data tersebut akan diteruskan ke dalam network layer, untuk kemudian diproses dan diberikan header atau judul pada setiap paket data yang ditransmisikan.</dt>
+                    <dd>Memastikan bahwa semua data yang melewatinya dapat tiba di sisi lainnya dengan tepat</dd>
+                    <dt>&emsp;&emsp;Fungsi berikutnya dari transport layer adalah fungsi supervise atau pengawasan. Transport layer memiliki fungsi yang sangat penting, karena transport layer berfungsi untuk memastikan bahwa seluruh paket data yang ditransmisikan di dalam jaringan komputer tersebut dapat sampai pada komputer penerima dengan cepat, tepat, dan sesuai dengan tujuan. Hal ini untuk menghindari terjadinya kesalahan dalam proses transmisi data di dalam jaringan komputer.</dt>
+                    <dd>Mengirim segment dari satu host ke host yang lain</dd>
+                    <dt>&emsp;&emsp;Fungsi berikutnya dari transport layer adalah melakukan proses pengiriman segment dari satu host menuju host yang lain. segment sendiri merupakan bagian dari pecahan-pecahan data yang sudah diproses di dalam transport layer. Dengan begitu, setiap pecahan data tersebut nantinya akan diterima di host lain.</dt>
+                    <dd>Memastikan rehabilitas data</dd>
+                    <dt>&emsp;&emsp;Reliabilitas merupakan sebuah kondisi dimana sebuah data adalah benar adanya, dan beisi sesuai dengan spesifikasinya. Tugas dar transport layer adalah memastikan hal tesebut. Jadi, transport layer nantinya akan mengecek, apakah data yang diolah dan juga diproses di dalam transport layer sudah sesuai dan sudah reliabel.<br> Apabila hal ini sudah selesai, maka transport layer kemudian akan mengirimkan pecahan atau pakt data tersebut menuju layer berikutnya untuk diproses lebih lanjut. Hal ini dilakukan untuk menjaga agar konektivitas di dalam jaringan ttap berjalan dengan baik.
+                        </dt>
+                    <dd>Mengatur lalu lintas dari sebuah jaringan</dd>
+                    <dt>&emsp;&emsp;Fungsi lainnya dari transport layer yang tidak kalah penting adalah fungsinya sebagai polisi lalu lintas. Ya, transport layer merupakan lapisan yang berfungsi untuk mengatur lalu lintas kecepatan data yang ditransmisikan melalui jaringan komputer tersebut. Hal ini dilakukan agar setiap perputaran dan traffic dapat berjalan dan ditransmisikan dengan lancar, dan juga diaplikasikan untuk mencegah terjadinya kemacetan apabila jaringan sedang berada pada kondisi yang sangat padat dan berpotensi mengalami kemacetan jaringan.</dt>
+                </dl>
+            </div>
+            <hr>
+
+
+            <div class="soal" id="empat">
+                <h3> Penjelasan Port Number, fungsi dan contoh proses kerjanya </h3>
+                <p>
+                    &emsp;&emsp;Port adalah soket atau jack koneksi yang terletak di luar unit sistem sebagai tempat kabel-kabel yang berbeda ditancapkan. Setiap port pasti berbeda fungsi dan bentuk fisiknya. Port-port tersebut adalah port serial, port paralel, port SCSI
+                    (dibaca “scuzzy”), port USB. Nomor port adalah bilangan bulat unsigned 16-bit yang berkisar dari 0 hingga 65535. Dalam klasifikasinya, port terbagi menjadi dua bagian yaitu:
+                </p>
+                <ul>
+                    <li><span>Physical Port</span> adalah port jaringan fisik yang memungkinkan kabel untuk dihubungkan ke komputer, router, modem dan perangkat periferal lainnya. Beberapa jenis port fisik tersedia pada perangkat keras jaringan komputer.
+                        Port fisik, merupakan lawan dari port virtual atau logic adalah salah satu interface di komputer, yaitu tempat Anda dapat memasukkan konektor untuk perangkat. Contoh Port Fisik: Port RJ45 (Port Ethernet / LAN / NIC), Port Serial
+                        (RS-232), Port USB.</li>
+                    <li> <span>Logical Port</span> adalah Port yang digunakan untuk operasi layanan sistem file, dibuat berdasarkan port Ethernet, port bond, atau VLAN. Secara mudahnya, port logic ini berarti tidak terlihat secara fisik namun tetap diakui
+                        keberadaannya layaknya sebuah software pada komputer. Contoh dari port logic adalah port yang sering Anda ketahui saat ini, yaitu port 22 (SSH), 443 (HTTPS), 53 (DNS) dll.
+                    </li>
+                </ul>
+                <h5>Fungsi Port</h5>
+                <ul>
+                    <li>Port serial digunakan untuk mentransmisikan data dari jarak jauh secara lambat, seperti keyboard, mouse, monitor, dan modem dial-up.</li>
+                    <li>Port paralel untuk mentransmisikan data pada jarak yang pendek secara Port ini sering dipakai untuk menghubungkan printer, disk eksternal, atau tape magnetik untuk bacup.</li>
+                    <li>Port SCSI (small computer system interface), untuk mentransmisikan data secara cepat bahkan dapat dipakai untuk 7 alat sekaligus atau “daisy chain“. Contoh daisy chain : dari SCSI kontroller kemudian disambungkan ke perangkat hardisk
+                        drive eksternal, dari HDD eksternal disambungkan secara seri ke perangkat yang lain seperti tape drive, kemudian dari tape drive tsb bisa juga disambungkan ke CD/DVD drive dan seterusnya.</li>
+                    <li>Port USB (universal serial bus), untuk mentransmisikan data hingga 127 periferal dalam rangkaian daisy chain.</li>
+                    <li>Port tambahan khusus seperti : FireWire, MIDI, IrDa, Bluetooth, dan ethernet. Fire Wire berfungsi untuk camcorder, pemutar DVD, dan TV. Sedangkan port MIDI (musical instrument digital interface) untuk menghubungkan instrumen musik.
+                        Kemudian port IrDA (Infrared Data Association) untuk koneksi nirkabel sejauh beberapa kaki. Port Bluetooth adalah gelombang radio jarak pendek yang bisa menstransmisikan sejauh 9 m.</li>
+                    <li>Port ethernet adalah untuk LAN.</li>
+                </ul>
+                <h5>Berdasarkan penomorannya, port UDP dan TCP dibagi menjadi tiga jenis:</h5>
+                <ul>
+                    <li><span>Well-know Port (0-1023)</span> port yang dikenali atau port sistem</li>
+                    <li><span>Registered Port (1024-49151)</span> port terdaftar yang ditugaskan oleh IANA ke layanan yang lebih spesifik setelah adanya request entity pada sebuah aplikasi.</li>
+                    <li><span>Dynamically Assigned Port (49152 - 65535)</span> port dinamis (pribadi) berkisar dari 49.152 hingga 65.535. Dapat digunakan oleh layanan pribadi atau layanan khusus, sehingga Anda bisa memodifikasi fungsi dari port-nya.</li>
+                </ul>
+                <h5>Daftar Port yang sering digunakan dalam Jaringan Komputer </h5>
+                <dl>
+                    <dd>1. Port 20 & 21 (FTP)</dd>
+                    <dt>&emsp;&emsp;FTP adalah singkatan dari “File Transfer Protocol”. Tujuan FTP adalah untuk mentransfer file melalui internet. Hal ini pada dasarnya menetapkan semua aturan yang harus diikuti selama transfer data. Namun, karena masalah keamanan, FTP juga meminta otentikasi kepada pengguna sebelum melakukan transfer data. Port 20 berfungsi untuk untuk meneruskan dan mentransfer data. Port ini mengambil alih tugas mentransfer data FTP saat berada dalam mode aktif. Port 21 berfungsi untuk pensinyalan untuk FTP. Hal ini menjalankan semua perintah dan memiliki kontrol aliran untuk data, yang berarti port 21 ini lebih leluasa dalam mentransfer data karena memiliki kontrol penuh dibandingkan port 20.</dt>
+                </dl>
+                <dl>
+                    <dd>2. Port 22 (SSH)</dd>
+                    <dt>&emsp;&emsp;SSH juga disebut sebagai “Secure Shell”.  Port ini berfungsi untuk melakukan tugas yang bisa diakses dari jarak jauh, contohnya seperti menghubungkan ke server atau host. Hal ini juga memungkinkan Anda untuk menjalankan sejumlah perintah dan memindahkan file Anda dari jarak jauh juga. <br> &emsp;&emsp;Port ini mengirimkan data melalui jaringan dalam bentuk terenkripsi, selain itu, hanya orang yang memiliki akses yang dapat login dari jarak jauh ke sistem yang dituju menggunakan Port 22 untuk memastikan bahwa tidak ada informasi yang masuk ke tangan yang tidak sah. Port ini beroperasi pada Application Layer (OSI Layer ke 7) Model TCP / IP dan dianggap sebagai salah satu port paling aman dan dapat diandalkan untuk mengakses file dari jarak jauh.
+                        </dt>
+                </dl>
+                <dl>
+                    <dd>3. Port 23 (TELNET) </dd>
+                    <dt>&emsp;&emsp;Port 23 (TELNET) berfungsi untuk membuat koneksi antara server dan komputer jarak jauh. Fungsi sebenarnya masih sama saja seperti SSH, hanya yang membedakan adalah dalam hal keamanan. Hal ini disebabkan karena port 23 tidak menggunakan enkripsi dalam koneksinya, sehingga menyebabkan telnet menjadi salah satu layanan yang kurang aman untuk digunakan.</dt>
+                </dl>
+                <dl>
+                    <dd>4. Port 25 (SMTP)</dd>
+                    <dt>&emsp;&emsp;SMTP merupakan singkatan dari Simple Mail Transfer Protocol. Fungsi port 25 adalah untuk memastikan bahwa pesan email dikomunikasikan melalui jaringan dengan aman. Port ini masih berada pada Application Layer (OSI Layer ke 7). Protokol ini tidak hanya melakukan tugas pengiriman pesan dalam jaringan saja, nmaun dapat mengirimkan pesan di antara berbagai jaringan yang lain. Hal Ini menjadikannya sebagai salah satu port terpenting untuk komunikasi pesan melalui jaringan karena keamanannya. Namun, Anda tidak memiliki hak  untuk mengunduh email agar bisa membacanya, karena ini hanyalah bertujuan untuk mentransfernya melalui jaringan.</dt>
+                </dl>
+                <dl>
+                    <dd>5. Port 2525 (SMTP Alternative)</dd>
+                    <dt>&emsp;&emsp;Port 2525 masih memiliki fungsi yang sama seperti port 25, yaitu untuk mengirimkan pesan e-mail dalam jaringan secara aman. Adapun port ini digunakan sebagai port alternatif selain port 25.</dt>
+                </dl>
+                <dl>
+                    <dd>6. Port 53 (DNS)</dd>
+                    <dt>&emsp;&emsp;DNS disebut juga sebagai “Domain Name System”, berfungsi untuk menerjemahkan alamat IP pada setiap host yang tadinya berupa angka menjadi huruf. Jika Anda mengunjungi sebuah situs web dengan sebuah nama, misalnya Facebool.com sebenarnya dibalik nama tersebut memiliki alamat IP. Hanya saja jika kita menggunakan alamat IP, maka itu cukup merumitkan. Oleh karena itu, ilmuwan komputer memiliki ide untuk mengganti alamat IP menjadi huruf agar lebih mudah dikenali dan diingat.</dt>
+                </dl>
+                <dl>
+                    <dd>Port 67&68 (DHCP)</dd>
+                    <dt>&emsp;&emsp;DHCP juga dikenal sebagai “Dynamic Host Configuration Protocol”, port ini berjalan pada protokol UDP. Port 67 dan 68 berfungsi untuk menetapkan informasi terkait Alamat IP ke klien di jaringan secara otomatis. Informasi ini dapat terdiri dari subnet mask, Alamat IP dll. Port UDP 67 melakukan tugas menerima permintaan alamat dari DHCP dan mengirim data ke server. Di sisi lain, UDP Port 68 melakukan tugas menanggapi semua permintaan DHCP dan meneruskan data ke klien.
+                        </dt>
+                </dl>
+                <dl>
+                    <dd>8. Port 80 (HTTP/Webserver)</dd>
+                    <dt>&emsp;&emsp;HTTP adalah singkatan dari Hypertext Transfer Protocol. Fungsi port 80 adalah memungkinkan peramban / browser terhubung ke halaman web di internet. Port 80 pada dasarnya menunggu klien web untuk meminta koneksi. Setelah koneksi berhasil dibuat, Anda akan terhubung ke World Wide Web (WWW) dan mendapatkan akses ke berbagai halaman web di internet. 
+                        Adapun port alternatif dari http / webserver adalah port 8080 dan 81.
+                        </dt>
+                </dl>
+                <dl>
+                    <dd>9. Port 443 (HTTPS)</dd>
+                    <dt>&emsp;&emsp;Port HTTPS 443 berfungsi untuk menghubungkan Anda ke internet dengan membuat koneksi antara halaman web dan browser yang terhubung ke World Wide Web (WWW). Namun, port ini memiliki fitur keamanan tambahan, yang tidak dimiliki port HTTP 80. Port ini dibuat untuk membuat koneksi yang lebih terjaga untuk memastikan bahwa data ditransmisikan melalui jaringan yang aman. Port Ini pada dasarnya mengenkripsi dan mengotentikasi paket jaringan sebelum mentransfernya melalui jaringan untuk meningkatkan keamanan. Fitur keamanan ini diperkenalkan oleh penggunaan SSL, yang juga bisa disebut sebagai Secure Socket Layer.
+                        </dt>
+                </dl>
+                <dl>
+                    <dd>10. Port 110 (POP-3)</dd>
+                    <dt>&emsp;&emsp; POP3 juga disebut sebagai Post Office Protocol Version 3 yang beroperasi pada port 110 dari Protokol TCP. Port 110 ini memungkinkan pesan email untuk diambil dari server SMTP. Menggunakan port ini, Anda dapat mengunduh pesan dari server dan kemudian membacanya. Selain itu, pesan juga akan dihapus dari server setelah diunduh. Namun, port ini memiliki masalah keamanan. Otentikasi yang ditransfer melalui jaringan tidak dienkripsi dan dikirim dalam teks biasa. Hal Ini memungkinkan para hacker dapat dengan mudah mendapatkan informasi di dalamnya dan menyalahgunakan informasi tersebut.</dt>
+                </dl>
+                <dl>
+                    <dd>11. Port 119 (NNTP Server)</dd>
+                    <dt>&emsp;&emsp;NNTP Server atau dikenal dengan Network News Tranfer Protocol menggunakan port 119. Port ini berfungsi untuk menampung server-server dari dunia USENET newsgroup (berita).</dt>
+                </dl>
+                <dl>
+                    <dd>12. Port 143 (IMAP)</dd>
+                    <dt>&emsp;&emsp;IMAP adalah singkatan dari  “Internet Message Access Protocol”. Port IMAP -143 berfungsi untuk mengambil email dari server jauh tanpa harus mengunduh email. Berarti Anda memiliki kebebasan untuk mengakses email dari mana saja dengan asalkan terhubung dengan server. Namun, Anda juga dapat mengunduh e-mail jika mau. Hal Ini juga memberi Anda kemudahan untuk mencari pesan-pesan Anda dari banyaknya pesan yang ada. Selain itu, port ini juga memastikan bahwa data tetap aman selama koneksi berlangsung.</dt>
+                </dl>
+                <dl>
+                    <dd>13. Port 389 (LDAP)</dd>
+                    <dt>&emsp;&emsp;LDAP merupakan singkatan dari “Lightweight Directory Access Protocol” menggunakan port 389. Port 389 berfungsi untuk menangani permintaan otentikasi dari komputer klien yang bertujuan untuk memberikan akses terhadap direktori, telepon, alamat dll.</dt>
+                </dl>
+                <dl>
+
+                    <dd>14. Port 3389 (RDP)</dd>
+                    <dt>&emsp;&emsp;TCP Port 3389 digunakan untuk Windows Remote Desktop Protocol (RDP) dan kadang-kadang juga digunakan oleh Windows Terminal Server. Port ini seringkali digunakan para hacker untuk melakukan serangan Distributed Denial of Service Attack atau lebih dikenal dengan sebutan DDOS.</dt>
+                </dl>
+                <dl>
+                    <dd>15. Port 445 (SMB)</dd>
+                    <dt>&emsp;&emsp;Port 445 digunakan untuk Server Message Block (SMB). SMB melayani berbagi File dan Printer Windows (file sharing). Pada Windows 2000, Microsoft telah menciptakan transportasi baru untuk SMB melalui TCP dan UDP pada port 445, yang menggantikan implementasi yang lebih lama yaitu di atas port 137, 138, 139.</dt>
+                </dl>
+                <dl>
+                    <dd>16. Port 1503 & 1720</dd>
+                    <dt>&emsp;&emsp;Port 1503 dan 1720 digunakan oleh aplikasi kolaboratif multimedia seperti NetMeeting untuk membangun dan mengontrol sesi kolaboratif. Selain itu, contohnya adalah VOIP (Voice Over Internet Protocol) yang berfungsi untuk melakukan panggilan melalui internet seperti Voice Call di WhatsApp.</dt>
+                </dl>
+                <dl>
+                    <dd>17. Port 3360 (MySQL)</dd>
+                    <dt>&emsp;&emsp;Port 3306 adalah port default untuk Protokol MySQL, yang digunakan oleh klien mysql, MySQL Connector, dan utility seperti mysqldump dan mysqlpump. Port 33060 adalah port default untuk Database Extended Interface (Protokol MySQL X).</dt>
+                </dl>
+                <dl>
+                    <dd>18. Port 5631</dd>
+                    <dt>&emsp;&emsp;Port 5631 adalah port default pada jaringan komputer yang berfungsi untuk mengkoneksikan jaringan komputer dengan pcAnywhere. pcAnywhere adalah aplikasi yang dibuat oleh perusahaan jaringan yang bernama Symantec untuk menyediakan fungsionalitas kendali jarak jauh. Tidak berbeda jauh dengan SSH dan telnet hanya saja pcAnywhere ini berbentuk grafis / GUI.</dt>
+                </dl>
+                <dl>
+                    <dd>19. Port 5900 (VNC)</dd>
+                    <dt>&emsp;&emsp;VNC adalah singkatan dari “Virtual Network Computing” menggunakan port 5900 dalam layanannya. Port ini berfungsi untuk menjalankan aplikasi sharing desktop dan platform remote control yang independen. VNC sangat populer dan juga digunakan untuk dukungan jarak jauh di banyak organisasi besar. Cara kerjanya tidak berbeda jauh dengan pc anywhere.</dt>
+                </dl>
+                <dl>
+                    <dd>20. Port 8080 & 3128</dd>
+                    <dt>&emsp;&emsp;Selain HTTP, Proxy juga menggunakan port yang sama dengan HTTP karena masih berjalan pada layanan yang sama hanya saja memiliki fungsi berbeda. Selain port 8080, ada juga port alternatif untuk proxy yaitu port 3128.</dt>
+                </dl>
+
+            </div>
+            <hr>
+
+            <div class="soal" id="lima">
+                <h3> Penjelasan tentang UDP dan prinsip kerjanya </h3>
+                <p>&emsp;&emsp;User Datagram Protocol (UDP) merupakan salah satu jenis protokol internet. Melalui UDP, sebuah aplikasi komputer dimungkinkan untuk mengirim pesan kepada komputer lain di sebuah jaringan tanpa perlu melalui proses komunikasi
+                    awal.
+                </p>
+                <p>&emsp;&emsp;UDP memiliki karakteristik utama berupa “connectionless”, artinya, pesan yang dikirimkan melalui UDP bisa sampai tanpa memerlukan proses negosiasi koneksi antara dua komputer host yang ingin bertukar info. Selain itu, karakteristik
+                    UDP lainnya adalah “unreliable”, artinya semua pesan yang dikirimkan tidak memiliki nomor urut atau pesan pemberitahuan. Jika selama transmisi ada pesan-pesan yang hilang, maka protokol aplikasi yang letaknya di atas UDP harus memulihkan
+                    pesan tersebut.
+                </p>
+                <h5>Fungsi UDP</h5>
+                <ul>
+                    <li>Cocok untuk mengirimkan informasi yang membutuhkan kecepatan daripada kehandalan, seperti misalnya video atau audio</li>
+                    <li>Salah satu protokol yang “ringan”, artinya mampu secara efektif memakai sumber daya profesor dan memori, bahkan menghematnya. Jika sebuah protokol dapat dikatakan ringan, maka protokol tersebut dapat melaksanakan fungsi spesifik dengan
+                        saling bertukar pesan, seperti misalnya query nama dalam DNS.</li>
+                    <li>UDP mengimplementasikan layanan keandalan, artinya protokol ini memfasilitasi layanan pertukaran data dengan andal, seperti misalnya yang ditemukan pada TFTP (Trivial File Transfer Protocol), dan NFS</li>
+                    <li>Tidak membutuhkan keandalan, misalnya saja pada bagian Routing Information Protocol (RIP).</li>
+                    <li>Dapat melakukan transmisi broadcast, sebab tak perlu adanya koneksi terlebih dahulu dengan host yang spesifik. Sebuah paket data dapat dikirimkan dengan beberapa tujuan yang dialamatkan pada multicast atau broadcast.</li>
+                </ul>
+                <h5>Perbedaan UDP dan TCP</h5>
+                <p>&emsp;&emsp;Transmission Control Protocol (TCP) sendiri sebetulnya juga merupakan salah satu protokol layaknya UDP yang juga memfasilitasi beberapa komputer agar dapat saling berkomunikasi dan bertukar data dalam jaringan. UDP dapat dikatakan
+                    sebagai salah satu protokol lapisan transport TCP/IP yang mendukung komunikasi unreliable (tidak handal), artinya tidak dibutuhkan koneksi antara komputer host dalam jaringan.</p>
+                <p>&emsp;&emsp;UDP sendiri adalah kebalikan dari transport layer TCP. Dengan adanya UDP, pengguna dapat mengirimkan paket-paket melalui aplikasi socket yang berupa datagram. Terdapat dua jenis koneksi, yaitu reliable (handal) dan unreliable
+                    (tak handal). Bedanya, jika koneksi reliable akan memberikan konfirmasi saat proses pengiriman data gagal, koneksi unreliable tak akan memberi notifikasi bahwa sebuah data gagal dikirimkan. Secara umum, perbedaan antara UDP dan TCP
+                    dapat dijabarkan dalam beberapa poin berikut :</p>
+                <ul>
+                    <li><span>Contoh Aplikasi: </span>Beberapa contoh aplikasi yang menggunakan protokol TCP antara lain TELNET, FTP (File Transfer Protocol), dan SMTP (Simple Mail Transfer Protocol). Sementara itu, beberapa contoh aplikasi yang menggunakan
+                        UDP antara lain : DNS (Domain Name System), SNMP (Simple Network Management Protocol), TFTP dan SunRPC.</li>
+                    <li><span>Karakteristik: </span>TCP merupakan sebuah protokol yang memiliki karakteristik berbasis koneksi (connection oriented), sementara UDP tidak berbasis koneksi (connectionless).</li>
+                    <li><span>Pengiriman Data: </span> TCP memakai jalur data full duplex, artinya antara jalur masuk dan jalur keluar data terpisah menjadi dua buah jalur, sehingga proses pengiriman dan penerimaan dapat dilakukan secara simultan. Sementara
+                        itu, UDP mengirimkan data dalam bentuk paket (datagram), tanpa adanya nomor identifier. Artinya, besar kemungkinan data yang didapat tidak urut dan bisa jadi mengalami kerusakan atau bahkan hilang selama proses pengiriman dari
+                        host asal ke tujuan.</li>
+                    <li><span>Port: </span>TCP menggunakan port yang mengadopsi 16-bit integer (di antara 0-65535), yang antara port satu dan port lainnya harus unik (berbeda). Sementara itu,UDP pun menggunakan porti 16-bit integer pula, namun dibagi-bagi
+                        menjadi 3 bagian, yatu port 1-1023 untuk well-known port, port 1024-49151 untuk registered port, dan sisanya untuk ephemeral port di nomor 49152-65535.</li>
+                    <li><span>Komunikasi: </span>TCP memingkinkan beberapa komputer berbeda saling berkomunikasi dan bertukar data. Sementara UDP sendiri kurang begitu handal untuk memfasilitasi komunikasi tanpa koneksi antara beberapa komputer host dalam
+                        jaringan TCP/IP.</li>
+                </ul>
+                <h5>Cara Kerja UDP</h5>
+                <p>&emsp;&emsp;Seperti juga pada kasus TCP,UDP pun memiliki sebuah saluran (channel) yang berguna untuk menghubungkan host antar host untuk saling berkirim informasi. Channel ini kemudian disebut dengan port UDP. Agar dapat terhubung dengan
+                    protokol UDP, aplikasi pada komputer terlebih dahulu perlu menyediakan alamat IP serta nomor port UDP dari host yang ingin dituju.</p>
+                <p>&emsp;&emsp;Port UDP ini berguna sebagai sebuah multiplexed message queue. Artinya, port UDP tersebut kemudian mampu bekerja dengan menerima beberapa pesan secara bersamaan. Setiap port UDP memiliki identifikasi dengan nomor yang unik,
+                    namun memiliki pembagian tersendiri seperti yang telah dijelaskan sebelumnya.</p>
+                <p>&emsp;&emsp;Walaupun cukup bermanfaat, namun UDP sendiri memiliki beberapa kelemahan dalam cara kerjanya. Misalnya saja, UDP tidak memfasilitasi mekanisme buffering data masuk dan keluar. Selain itu, UDP juga tak memfasilitasi segmentasi
+                    data yang ukurannya besar untuk disederhanakan ke dalam segmen-segmen data, yang bisa dilakukan dengan TCP. Dalam protokol UDP juga tidak terdapat mekanisme flow-control seperti layaknya TCP.</p>
+                <p>&emsp;&emsp; Tentunya antara UDP dan TCP saling terkait dalam hal jaringan komputer, yang membuatnya sebagai protokol bermanfaat yang dapat membantu pengguna saling berkomunikasi dan berkirim data.</p>
+
+            </div>
+            <hr>
+
+
+            <div class="soal" id="enam">
+                <h3> Prinsip kerja Checksum Checking dan contohnya </h3>
+                <p>
+                    &emsp;&emsp;Pada dasarnya komunikasi data merupakan proses pengiriman data yang terjadi dari dua atau lebih device yang terhubung dalam sebuah jaringan, baik local maupun global seperti internet. Namun dalam sebuah proses pengiriman, tidak dipungkiri
+                    dapat terjadi kesalahan berupa ketidak sesuaian data yang dikirim dan diterima atau bahkan dapat terjadi kegagalan dalam pengiriman. Sehingga dibutuhkan Error Detection dan Error Corection.Checksum adalah skema kesalahan-deteksi sederhana
+                    di mana setiap pesan yang dikirim yang menghasilkan nilai numeric berdasarkan byte dalam pesan.
+                </p>
+                <h5>Prinsip kerja checksum</h5>
+                <p>&emsp;&emsp;Proses pengecekan metode checksum dapat dilakukan dengan membandingkan checksum yang telah sampai pada receiver dengan checksum data yang dikirimkan. Apabila terjadi perbedaan nilai pada perbandingan ini, maka terjadi kesalahan
+                    atau error dalam pengiriman data. Pada dasarnya metode ini mirip dengan parity check, perbedaannya adalah jumlah bit pada checksum lebih besar dan hasil dari penjumlahan data degan checksum harus selalu dibuat nol. (1's complement)</p>
+                <h5>Langkah-langkah Perhitungan Checksum</h5>
+                <p>Di sisi pengirim</p>
+                <ul>
+                    <li>Unit data dibagi ke dalam k seksi yang masing-masing seksi berisi n-bit data.</li>
+                    <li>Semua seksi data tersebut ditambahkan menggunakan 1’s complement untuk mendapatkan jumlahnya.</li>
+                    <li>Jumlah tersebut kemudian dikomplemenkan dan menjadi nilai checksum.</li>
+                    <li>Checksum dikirim bersama dengan data sebagai unit terakhir dalam paket pengiriman.</li>
+                </ul> <br>
+                <p>Misalnya Bit Data yang di kirim <span>1111111100000000&emsp;1010101010101010&emsp;0000111111110000</span>, maka perhitungan di sisi pengirim: </p>
+                <img src="img/pengirim.png" alt="">
+                <p>Maka bentuk data yang dikirim <span>1111111100000000&emsp;1010101010101010&emsp;0000111111110000&emsp;0100011001100100</span> </p> <br>
+                <p>Di sisi penerima</p>
+                <ul>
+                    <li>Unit data yang diterima kembali dibagi ke dalam k seksi yang masing-masing seksi berisi b-bit data.</li>
+                    <li>Semua seksi unit data tersebut dijumlahkan menggunakan 1’s complement untuk mendapatkan jumlahnya.</li>
+                    <li>Jumlah tersebut kemudian dikomplemenkan.</li>
+                    <li>Jika hasilnya adalah nol, maka data diterima; jika tidak, data akan ditolak.</li>
+                </ul> <br>
+                <p>Penerima menerima data <span>1111111100000000&emsp;1010101010101010&emsp;0000111111110000&emsp;0100011001100100</span>, maka perhitungan di sisi penerima: </p>
+                <img src="img/penerima.png" alt="">
+                <p>Complementnya <span>0000000000000000</span> berarti data tidak eror</p>
+            </div>
+
+        </section>
+
+        <!-- Profil -->
+        <div class="left">
+            <section class="profil">
+                <img src="img/profile2.png" alt="">
+                <ul>
+                    <li>Andi Widad Sucitra</li>
+                    <li>D121191013</li>
+                    <li>sucitraandiwidad@gmail.com</li>
+                </ul>
+            </section>
+            <section class="daftar">
+                <h4>Daftar Isi</h4>
+                <ul>
+                    <li><a href="#satu">Model Referensi TCP/IP</a></li>
+                    <li><a href="#dua">Mengapa Model Referensi dibuat berlayer</a></li>
+                    <li><a href="#tiga">Fungsi Layer Transport</a></li>
+                    <li><a href="#empat">Penjelasan Port Number, fungsi dan contoh proses kerjanya</a></li>
+                    <li><a href="#lima">Penjelasan tentang UDP dan dan prinsip kerjanya</a></li>
+                    <li><a href="#enam">Prinsip kerja Checksum Checking dan contohnya</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/arrow.png" alt=""></button>
+    <!-- Footer -->
+    <footer>
+        <p>copyright,2020.</p>
+    </footer>
+</body>
+
+<script src="script.js"></script>
+
+</html>
