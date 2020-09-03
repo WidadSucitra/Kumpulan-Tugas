@@ -372,28 +372,6 @@
         padding-bottom: 100px;
         margin-bottom: 0;
     }
-    
-    button img {
-        height: 30px;
-    }
-    
-    #myBtn {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 30px;
-        z-index: 99;
-        border: none;
-        background-color: rgba(12, 12, 12, 0.295);
-        color: white;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 4px;
-    }
-    
-    #myBtn:hover {
-        background-color: #555;
-    }
     /* RESPONSIV */
     
     @media screen and (min-width: 425px) and (max-width: 760px) {
