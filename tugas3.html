@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmission Control Protocol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="jumbotron"></div>
+        <div class="navbar" id="navbar">
+            <ul>
+                <li> <a href="index.html">Home</a> </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Jaringan Komputer
+                            <div class="tri-down"></div>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="tugas.html">Tugas 1</a>
+                            <a href="tugas2.html">Tugas 2</a>
+                            <a href="tugas3.html">Tugas 3</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Materi -->
+    <div class="container">
+        <section class="materi">
+            <h1> Jaringan Komputer </h1>
+            <h2> Transmission Control Protocol </h2>
+
+            <div class="soal" id="satu">
+                <h3> Model Referensi TCP/IP </h3>
+                <p> &emsp;&emsp; TCP/IP Layer atau disebut dengan Transmission Control Protocol/Internet Protocol layer merupakan model komunikasi data yang dikempangkan oleh US Department of Defense (DoD) yang merepresentasikan komunikasi data antar peralatan
+                    jaringan dan antar jaringan. Protokol internet pertama kali dirancang pada tahun 1980-an. Akan tetapi di tahun 1990-an dimana internet semakin populer dan host yang semakin banyak, mulai bemunculan protokol yang hanya bisa digunakan
+                    oleh kalangan tertentu, atau protokol yang dibuat oleh pabrik tertentu yang belum tentu kompatibel dengan protokol lain dari pabrik yang lain pula. Sehingga pada akhirnya badan International Standart Organization (ISO) membuat standarisasi
+                    protokol yang saat ini dikenal dengan protokol model Open System Interconnection atau disingkat OSI. Model OSI ini manjadi referensi dan konsep dasar teori tentang cara kerja sebuah protokol. </p>
+                <p> &emsp;&emsp; Dalam perkembangannya TCP/IP digunakan sebagai standart de facto. Arsitektur TCP/IP tidaklah berbasis model referensi tujuh lapis OSI, tetapi menggunakan model referensi DARPA. TCP/IP mengimplemenasikan arsitektur berlapis
+                    yang terdiri atas empat lapis. Empat lapis ini, dapat dipetakan (meski tidak secara langsung) terhadap model referensi OSI. Empat lapis ini, kadang-kadang disebut sebagai DARPA Model, Internet Model, atau DoD Model, mengingat TCP/IP
+                    merupakan protokol yang awalnya dikembangkan dari proyek ARPANET yang dimulai oleh Departemen Pertahanan Amerika Serikat.</p>
+                <img src="img/model.png" alt="Model Referensi TCP/IP">
+                <h5>Macam-Macam Layer TCP/IP</h5>
+                <dl>
+                    <dd> Application Layer</dd>
+                    <dt>
+                        &emsp;&emsp;Berperan sebagai high-level protocol yang melakukan  proses representasi, encoding dan dialog control data. Juga menyediakan servis-servis terhadap software-software yang berjalan pada komputer. Tugas application layer disini adalah untuk mendefinisikan bagaimana sebuah browser bisa mengambil konten dari sebuah web server hingga akhirnya tampil di web browser. Protokol-protokol yang beroperasi pada Application Layer:
+                        <ul>
+                            <li>Domain Name Service Protocol (DNS) Menerjemahkan nama host menjadi alamat IP. 
+                            </li>
+                            <li>Hypertext -Transfer Protocol (HTTP) digunakan untuk mentransfer file Web dari World Wide Web. </li>
+                            <li>Simple Mail Transfer Protocol (SMTP) digunakan untuk mentransfer pesan email.</li>
+                            <li>Telnet, a terminal emulation protocol, digunakan untuk mengakses server atau peralatan jaringan jarak jauh </li>
+                            <li>File Transfer Protocol (FTP) Digunakan untuk transfer file secara interaktif antar sistem</li>
+                        </ul>
+                    </dt>
+                    <dd>Transport</dd>
+                    <dt>&emsp;&emsp; Transport layer di TCP/IP disebut juga sebagai Host-to-Host, fungsinya untuk membangun koneksi antar host. Misal antara komputer satu dengan yang lain, client dengan server. Transport Layer berfungsi menyediakan servis yang akan digunakan oleh Application Layer. Mempunyai 2 protokol utama yaitu TCP dan UDP. Pada Layer ini data diubah menjadi suatu paket data  dan menentukan metode pengiriman, flow control dan  error correction terhadap paket data.</dt>
+                    <dd>Internet</dd>
+                    <dt>&emsp;&emsp;Berperan untuk memberikan informasi alamat asal dan tujuan dari paket data dan menentukan jalur atau rute (routing) pengiriman paket data. Internet Protocol mendefinisikan 2 hal di IP Address yaitu Network Address ( wilayahnya ) dan Host Address ( Alamat Spesifiiknya ).</dt>
+                    <dd>Network Acces</dd>
+                    <dt>&emsp;&emsp;Layer ini sering juga disebut sebagai host-to-network Layer. Layer menangani semua komponen dan proses yang berkaitan dengan physical link, baik secara fisik maupun logical. Informasi mengenai Teknologi Jaringan yang digunakan juga ditentukan pada Layer ini. Pada layer ini terdapat protokol-protokol seperti ethernet pada LAN, PPP pada WAN, dan juga Frame Relay.</dt>
+                </dl>
+
+            </div>
+            <hr>
+
+            <div class="soal" id="dua">
+                <h3> Mengapa Model Referensi dibuat berlayer </h3>
+                <ul>
+                    <li>Setiap lapisan memiliki fungsi dan proses yang berbeda</li>
+                    <li>Membantu dalam perancangan protokol</li>
+                    <li>Membantu dalam pengembangan </li>
+                    <li>Mencegah perubahan kemampuan atau teknologi akibat perubahan lapisan di bawah atau atasnya </li>
+                    <li>Menyediakan satu bahasa untuk mendeskripsikan fungsi jaringan dan kemampuannya.</li>
+                </ul>
+                <p>
+
+                </p>
+            </div>
+            <hr>
+
+
+            <div class="soal" id="tiga">
+                <h3> Fungsi Layer Transport </h3>
+                <dl>
+                    <dd> Menerima data dari session layer</dd>
+                    <dt>
+                        &emsp;&emsp;Fungsi pertama dari transport layer ini adalah menerima data yang dikirimkan melalui session layer. Seperti kita ketahui, bahwa keseluruhan model OSI ini merupakan satu kesatuan, sehingga setiap kegiatan yang berjalan di dalam Model Referensi OSI ini adalah berkesinambungan. Begitu pula dengan proses transmisi data. Data yang sdah melewati layer session, kemudian diteruskan ke transport layer, untuk kemudian diteruskan lagi menuju layer-layer berikutnya. 
+                    </dt>
+                    <dd>Memecah data menjadi bagian-bagian yang lebih kecil</dd>
+                    <dt>&emsp;&emsp; Disinilah fungsi utama lainnya dari transport layer. Ya, transport layer memiliki fungsi utama untuk memecah data atau peket data ke dalam bentuk-bentuk paket yang lebih kecil. Proses ini dilakukan untuk mempermudah proses pengiriman alias transmisi data yang berjalan di dalam jaringan komputer tersebut. Dengan adanya proses pemecahan data ini, maka setiap data diyakini tidak akan mengalami corrupt , atau mengalami proses trasnmisi yang sangat lamabt akibat besarnya ukuran data yang ada.</dt>
+                    <dd>Meneruskan data ke network layer</dd>
+                    <dt>&emsp;&emsp;Netwok layer jaringan komputer merupakan salah satu lapisan yang bertugas untuk memberikan header pada paket data yang sudah dipecah. Nah, ketika paket data tersebut sudah dipecah-pecah di dalam transport layer, maka kemudian paket data tersebut akan diteruskan ke dalam network layer, untuk kemudian diproses dan diberikan header atau judul pada setiap paket data yang ditransmisikan.</dt>
+                    <dd>Memastikan bahwa semua data yang melewatinya dapat tiba di sisi lainnya dengan tepat</dd>
+                    <dt>&emsp;&emsp;Fungsi berikutnya dari transport layer adalah fungsi supervise atau pengawasan. Transport layer memiliki fungsi yang sangat penting, karena transport layer berfungsi untuk memastikan bahwa seluruh paket data yang ditransmisikan di dalam jaringan komputer tersebut dapat sampai pada komputer penerima dengan cepat, tepat, dan sesuai dengan tujuan. Hal ini untuk menghindari terjadinya kesalahan dalam proses transmisi data di dalam jaringan komputer.</dt>
+                    <dd>Mengirim segment dari satu host ke host yang lain</dd>
+                    <dt>&emsp;&emsp;Fungsi berikutnya dari transport layer adalah melakukan proses pengiriman segment dari satu host menuju host yang lain. segment sendiri merupakan bagian dari pecahan-pecahan data yang sudah diproses di dalam transport layer. Dengan begitu, setiap pecahan data tersebut nantinya akan diterima di host lain.</dt>
+                    <dd>Memastikan rehabilitas data</dd>
+                    <dt>&emsp;&emsp;Reliabilitas merupakan sebuah kondisi dimana sebuah data adalah benar adanya, dan beisi sesuai dengan spesifikasinya. Tugas dar transport layer adalah memastikan hal tesebut. Jadi, transport layer nantinya akan mengecek, apakah data yang diolah dan juga diproses di dalam transport layer sudah sesuai dan sudah reliabel.<br> Apabila hal ini sudah selesai, maka transport layer kemudian akan mengirimkan pecahan atau pakt data tersebut menuju layer berikutnya untuk diproses lebih lanjut. Hal ini dilakukan untuk menjaga agar konektivitas di dalam jaringan ttap berjalan dengan baik.
+                        </dt>
+                    <dd>Mengatur lalu lintas dari sebuah jaringan</dd>
+                    <dt>&emsp;&emsp;Fungsi lainnya dari transport layer yang tidak kalah penting adalah fungsinya sebagai polisi lalu lintas. Ya, transport layer merupakan lapisan yang berfungsi untuk mengatur lalu lintas kecepatan data yang ditransmisikan melalui jaringan komputer tersebut. Hal ini dilakukan agar setiap perputaran dan traffic dapat berjalan dan ditransmisikan dengan lancar, dan juga diaplikasikan untuk mencegah terjadinya kemacetan apabila jaringan sedang berada pada kondisi yang sangat padat dan berpotensi mengalami kemacetan jaringan.</dt>
+                </dl>
+            </div>
+            <hr>
+
+
+            <div class="soal" id="empat">
+                <h3> Penjelasan tentang TCP dan prinsip kerjanya </h3>
+                <p>
+                    &emsp;&emsp;Transmission Control Protocol/Internet Protocol (TCP/IP) protocol standar yang digunakan dalam proses tukar menukar data antar komputer (Komunikasi) dalam jaringan internet. TCP/IP mengatur standar bagaimana data bisa dikirim dan diterima
+                    antar komputer dengan menggunakan jaringan yang ada saat ini yaitu jaringan internet. Dengan menggunakan protokol TCP, maka proses pengiriman akan terjamin. Hal ini disebabkan adanya bagian untuk sebuah metode yang disebut flow control.
+                </p>
+                <h5>Prinsip Kerja TCP</h5>
+                <p>
+                    &emsp;&emsp;TCP mempunyai prinsip kerja seperti "virtual circuit" pada jaringan telepon. TCP lebih mementingkan tata-cara dan keandalan dalam pengiriman data antara dua komputer dalam jaringan. TCP tidak perduli dengan apa-apa yang dikerjakan oleh IP,
+                    yang penting adalah hubungan komunikasi antara dua komputer berjalan dengan baik. Dalam hal ini, TCP mengatur bagaimana cara membuka hubungan komunikasi, jenis aplikasi apa yang akan dilakukan dalam komunikasi tersebut (misalnya mengirim
+                    e-mail, transfer file dsb.) Di samping itu, juga mendeteksi dan mengoreksi jika ada kesalahan data. TCP mengatur seluruh proses koneksi antara satu komputer dengan komputer yang lain dalam sebuah jaringan komputer.
+                </p>
+                <p>
+                    &emsp;&emsp;TCP mengatur multiplexing dari data yang dikirim/diterima oleh sebuah komputer. Adanya identifikasi pada TCP header memungkinkan multiplexing dilakukan. Hal ini memungkinkan sebuah komputer melakukan beberapa hubungan TCP secara logik. Bentuk
+                    hubungan adalah full duplex, hal ini memungkinkan dua buah komputer saling berbicara dalam waktu bersamaan tanpa harus bergantian menggunakan kanal komunikasi. Untuk mengatasi saturasi (congestion) pada kanal komunikasi, pada header
+                    TCP dilengkapi informasi tentang flow control.
+                </p>
+                <p>
+                    &emsp;&emsp;Prinsip kerja dari TCP berdasarkan prinsip client-server. Server adalah program pada komputer yang secara pasif akan mendengarkan (listen) nomor port yang telah ditentukan pada TCP. Sedang client adalah program yang secara aktif akan membuka
+                    hubungan TCP ke komputer server untuk meminta servis yang dibutuhkan. Hal yang cukup penting untuk dipahami pada TCP adalah port number. Port number menentukan servis yang dilakukan oleh program aplikasi diatas TCP. Nomor-nomor ini
+                    telah ditentukan oleh Network Information Center dalam Request For Comment (RFC) 1010 [10]. Sebagai contoh untuk aplikasi File Transfer Protokol (FTP) diatas transport layer TCP digunakan port number 20 dan masih banyak lagi.Prinsip
+                    kerja dari TCP berdasarkan prinsip client-server. Server adalah program pada komputer yang secara pasif akan mendengarkan (listen) port number yang telah ditentukan pada TCP. Sedang client adalah program yang secara aktif akan membuka
+                    hubungan TCP ke komputer server untuk meminta servis yang dibutuhkan.State diagram kerja TCP diperlihatkan pada gambar 3. Pada state diagram gambar 3, client akan secara aktif membuka hubungan (active open) dengan mengirimkan sinyal
+                    SYN (state SYN SENT) ke komputer server tujuan. Jika server menerima sinyal SYN maka server yang saat itu berada pada state LISTEN akan mengirimkan sinyal SYN dan ke dua komputer (client & server) akan ke state ESTAB. Jika tidak ada
+                    tanggapan dari komputer yang dituju, maka program akan kembali pada state CLOSE. Setelah servis yang dilakukan telah selesai maka salah client akan mengirimkan sinyal FIN dan komputer client akan berada pada state FIN WAIT sampai sinyal
+                    FIN dari server diterima. Pada saat menerima sinyal FIN, server akan ke state CLOSE WAIT hingga hubungan diputus. Akhirnya kedua komputer akan kembali pada state CLOSE.
+                </p>
+            </div>
+            <hr>
+
+            <div class="soal" id="lima">
+                <h3> Struktur segmen TCP dan fungsi masing-masing fieldnya </h3>
+                <dl>
+                    <dd>1. Source Port</dd>
+                    <dt>&emsp;&emsp;Source Port memiliki ukuran 2 byte dan mengindikasikan sumber protokol lapisan aplikasi yang mengirimkan segmen TCP yang bersangkutan. Gabungan antara field Source IP Address dalam header IPdan field Source Port dalam field header TCP disebut juga sebagai socketsumber, yang berarti sebuah alamat global dari mana segmen dikirimkan. Lihat juga Port TCP.</dt>
+                </dl>
+                <dl>
+                    <dd>2. Destination Port</dd>
+                    <dt>&emsp;&emsp;Destination Port memiliki ukuran 2 byte (16 bit) dan mengindikasikan tujuan protokol lapisan aplikasi yang menerima segmen TCP yang bersangkutan. Gabungan antara field Destination IP Address dalam header IP dan field Destination Port dalam field header TCP disebut juga sebagai sockettujuan, yang berarti sebuah alamat global ke mana segmen akan dikirimkan.</dt>
+                </dl>
+                <dl>
+                    <dd>3. Sequence Number</dd>
+                    <dt>&emsp;&emsp;Sequence Number memiliki ukuran 4 byte (32 bit) dan mengindikasikan nomor urut dari oktet pertama dari data di dalam sebuah segmen TCP yang hendak dikirimkan. Field ini harus selalu diset, meskipun tidak ada data (payload) dalam segmen. Ketika memulai sebuah sesi koneksi TCP, segmen dengan flag SYN (Synchronization) diset ke nilai 1, field ini akan berisi nilai Initial Sequence Number (ISN). Hal ini berarti, oktet pertama dalam aliran byte (byte stream) dalam koneksi adalah ISN+1.</dt>
+                </dl>
+                <dl>
+                    <dd>4. Acknowledgment Number</dd>
+                    <dt>&emsp;&emsp;Acknowledgment Number memiliki ukuran 4 byte (32 bit) dan mengindikasikan nomor urut dari oktet selanjutnya dalam aliran byte yang diharapkan oleh untuk diterima oleh pengirim dari si penerima pada pengiriman selanjutnya. Acknowledgment number sangat dipentingkan bagi segmen-segmen TCP dengan flag ACK diset ke nilai 1.</dt>
+                </dl>
+                <dl>
+                    <dd>5. Data Offset</dd>
+                    <dt>&emsp;&emsp;Data Offset memiliki ukuran 4 bit dan mengindikasikan di mana data dalam segmen TCP dimulai. Field ini juga dapat berarti ukuran dari header TCP. Seperti halnya field Header Length dalam header IP, field ini merupakan angka dari word 32-bit dalam header TCP. Untuk sebuah segmen TCP terkecil (di mana tidak ada opsi TCP tambahan), field ini diatur ke nilai 0×5, yang berarti data dalam segmen TCP dimulai dari oktet ke 20 dilihat dari permulaan segmen TCP. Jika field Data Offset diset ke nilai maksimumnya (24=16) yakni 15, header TCP dengan ukuran terbesar dapat memiliki panjang hingga 60 byte.</dt>
+                </dl>
+                <dl>
+                    <dd>6. Reserved</dd>
+                    <dt>&emsp;&emsp;Reserved memiliki ukuran 6 bit dan direservasikan untuk digunakan pada masa depan. Pengirim segmen TCP akan mengeset bit-bit ini ke dalam nilai 0.</dt>
+                </dl>
+                <dl>
+                    <dd>7. Flags</dd>
+                    <dt>&emsp;&emsp;Flags memiliki ukuran 6 bit dan mengindikasikan flag-flag TCP yang memang ada enam jumlahnya, yang terdiri atas: URG (Urgent), ACK (Acknowledgment), PSH (Push), RST (Reset), SYN (Synchronize), dan FIN (Finish).</dt>
+                </dl>
+                <dl>
+                    <dd>8. Window</dd>
+                    <dt>&emsp;&emsp;Window memiliki ukuran 2 byte (16 bit) dan mengindikasikan jumlah byte yang tersedia yang dimiliki oleh buffer host penerima segmen yang bersangkutan. Buffer ini disebut sebagai Receive Buffer, digunakan untuk menyimpan byte stream yang datang. Dengan mengimbuhkan ukuran window ke setiap segmen, penerima segmen TCP memberitahukan kepada pengirim segmen berapa banyak data yang dapat dikirimkan dan disangga dengan sukses. Hal ini dilakukan agar si pengirim segmen tidak mengirimkan data lebih banyak dibandingkan ukuran Receive Buffer. Jika tidak ada tempat lagi di dalam Receive buffer, nilai dari field ini adalah 0. Dengan nilai 0, maka si pengirim tidak akan dapat mengirimkan segmen lagi ke penerima hingga nilai field ini berubah (bukan 0). Tujuan hal ini adalah untuk mengatur lalu lintas data atau flow control.</dt>
+                </dl>
+                <dl>
+                    <dd>9. Checksum</dd>
+                    <dt>&emsp;&emsp;Checksum memiliki ukuran 2 byte (16 bit) dan mampu melakukan pengecekan integritas segmen TCP (header-nya dan payload-nya). Nilai field Checksum akan diatur ke nilai 0 selama proses kalkulasi checksum.</dt>
+                </dl>
+                <dl>
+                    <dd>10. Urgent Pointer</dd>
+                    <dt>&emsp;&emsp;Urgent Pointer memiliki ukuran 2 byte (16 bit) dan menandakan lokasi data yang dianggap “urgent” dalam segmen.</dt>
+                </dl>
+                <dl>
+                    <dd>11. Options</dd>
+                    <dt>&emsp;&emsp;Options memiliki ukuran 4 byte (32 bit) dan berfungsi sebagai penampung beberapa opsi tambahan TCP. Setiap opsi TCP akan memakan ruangan 32 bit, sehingga ukuran header TCP dapat diindikasikan dengan menggunakan field Data offset.</dt>
+                </dl>
+
+            </div>
+            <hr>
+
+
+            <div class="soal" id="enam">
+                <h3> Proses Flow Control TCP </h3>
+                <p>
+                    &emsp;&emsp;TCP juga menyediakan mekanisme untuk flow control. Flow control membantu menjaga kehandalan transmisi TCP dengan menyesuaikan laju aliran data antara sumber dan tujuan untuk sesi tertentu. Flow control dilakukan dengan membatasi jumlah segmen
+                    data yang diteruskan pada satu waktu dan dengan meminta acknowledgements penerimaan sebelum mengirim lebih. Untuk menjalankan flow control, hal pertama yang menentukan TCP adalah jumlah segmen data yang dapat diterima perangkat tujuan.
+                    TCP Header memuat sebuah field 16-bit yang disebut window size. Ini adalah jumlah byte perangkat tujuan dari sesi TCP yang mampu menerima dan memproses sekaligus. inisaial window size disetujui selama sesi startup melalui three-way
+                    handshake antara sumber dan tujuan. Setelah disetujui, perangkat sumber harus membatasi jumlah segmen data yang dikirim ke perangkat tujuan berdasarkan ukuran jendela (window size). Hanya setelah perangkat sumber menerima acknowledgements
+                    bahwa segmen data yang telah diterima, hal tersebut bisa terus mengirim lebih banyak data untuk sesi itu. Selama penundaan dalam menerima acknowledgements, pengirim tidak mengirimkan segmen tambahan. Dalam periode ketika jaringan mengalami
+                    hambatan atau sumber daya host penerima yang tegang, penundaan dapat meningkat. Penundaan ini akan bertambah lagi, tingkat transmisi efektif data untuk sesi ini menurun. Perlambatan dalam transmisi data dari setiap sesi membantu mengurangi
+                    konflik sumber daya pada jaringan dan perangkat tujuan ketika beberapa sesi berjalan.
+                </p>
+                <img src="img/flow_control.png" alt="">
+                <p>&emsp;&emsp;Perhatikan angka untuk representasi yang disederhanakan dari window size dan acknowledgements. Dalam contoh ini, window size awal untuk sesi TCP direpresentasikan ke 3000 bytes. Ketika pengirim telah mentransmisikan 3000 bytes,
+                    menunggu acknowledgements dari byte ini sebelum mengirimkan segmen lainnya dalam sesi ini. Setelah pengirim telah menerima acknowledgements dari penerima, pengirim dapat mengirimkan tambahan 3000 bytes. TCP menggunakan window size
+                    untuk mencoba mengelola tingkat transmisi terhadap aliran maksimum jaringan dan perangkat tujuan dapat mendukung, dan meminimalkan kerugian dengan transmisi ulang.</p>
+            </div>
+            <hr>
+
+            <div class="soal" id="tujuh">
+                <h3> Bagaimana TCP mengatasi Kongesti (kemacetan dalam jaringan) </h3>
+                <p>&emsp;&emsp;Aspek lainnya dalam komunikasi data yang sangat penting adalah beragam standard yang ada di dalamnya. Ada beberapa standard umum atau protokol yang selalu ada dalam proses komunikasi yang terjadi antar perangkat. Standar komunikasi
+                    data dikenal sebagai serangkaian protokol atau aturan yang memberikan izin bagi antar perangkat untuk melakukan perpindahan data. Hal utama yang ada pada protokol yakni penerapan standard teknis agar komunikasi real-time dapat dilakukan.
+                    Dari protokol inilah semua hubungan komunikasi ditentukan untuk berjalan dan berlangsung ataukah tidak. Protokol tersebut juga berkaitan dengan materi komunikasi data yang sangat bervariasi sesuai dengan tujuan penggunaan. </p>
+                <p>Ada beberapa hal penting yang perlu Anda ketahui berkaitan dengan fungsi dari protokol : </p>
+                <ul>
+                    <li>Mendeteksi berbagai koneksi perangkat secara fisik.</li>
+                    <li>Melakukan negosiasi tentang beragam karakteristik hubungan dalam proses komunikasi data.</li>
+                    <li>Melihat dan menentukan tentang yang harusnya dilakukan ketika terdapat kerusahkan pada pesan.</li>
+                    <li>Melakukan deteksi berbagai kerugian dalam hubungan antar jaringan sekaligus menghasilkan solusi untuk selanjutnya dilakukan.</li>
+                    <li>Menentukan bagaimana sebuah format pesan yang tepat untuk digunakan.</li>
+                    <li>Melakukan suatu metode yang disebut jabat tangan dalam sebuah komunikasi jaringan.</li>
+                    <li>Mengakhiri adanya koneksi antar jaringan.</li>
+                </ul>
+                <p>&emsp;&emsp;Selain dari protokol di atas, berlangsungnya sebuah komunikasi yang dilakukan antar jaringan juga mempengaruhi adanya model komunikasi data. Ragam komunikasi tersebut muncul karena beberapa tipe atau channel dari sistem transmisi
+                    yang berbeda. Beberapa model komunikasi data yang sering terjadi dan lebih utama dilakukan yakni one way transmission atau dikenal sebagai transmisi searah atau simplex. Kemudian either way transmission atau half duplex yang dikenal
+                    transmisi dua arah secara bergantian. Terakhir yakni both way transmission atau full duplex, yakni transmisi dilakukan secara serentak dua arah.</p>
+            </div>
+            <hr>
+
+            <div class="soal" id="delapan">
+                <h3> Mengapa Model Referensi dibuat berlayer </h3>
+                <p>&emsp;&emsp;Kongesti adalah masalah yang terjadi pada share network ketika beberapa user menggunakan resources yang sama seperti bandwidth, buffer dan antrian. Dalam jaringan packet-switched, paket masuk dan keluar pada buffer dan melakukan
+                    antrian pada switching devices. Kenyataannya, jaringan packetswitched seringkali diartikan sebagai “network of queues”. Karakteristik dari jaringan packet-switched adalah paket-paket yang datang seringkali memenuhi bandwidth baik dari
+                    satu sender maupun lebih. Buffer membantu router untuk mengatasi hal tersebut sampai kapasitas buffer penuh. Jika ada paket masuk, maka paket tersebuat akan didrop. Penambahan kapasitas buffer tidak menyelesaikan masalah karena buffer
+                    yang terlalu besar akan meningkatkan delay karena antrian.
+                </p>
+                <p>&emsp;&emsp;Kongesti sering kali terjadi dimana beberapa link masuk ke dalamm single link seperti internal LAN yang dihubungkan dengan jaringan WAN. Kongesti juga dapat terjadi pada router pada jaringan inti dimana trafik yang terjadi
+                    lebih besar daripada kemampuan yang mampu ditangani router tersebut. Beberapa teknik berikut dapat digunakan untuk mengatasi kongesti :</p>
+                <ul>
+                    <li><span>End System Flow Control, </span>teknik ini bukan skema control kongesti tetapi cara untuk menjaga agar sender tidak mengirimkan paket secara berlebihan kepada sender.</li>
+                    <li><span>Network congestion control, </span>mekanisme ini hamper sama dengan en to end flow control tetapi difokuskan untuk mengurangi kongesti pada jaringan, bukan pada receiver.</li>
+                    <li><span>Network-Based Congestion Avoidance, </span>pada skema ini, router mendeteksi kemungkinan terjadinya kongesti sehingga router memperkecil paket yang dikirim sebeluma antrian menjadi penuh.</li>
+                </ul>
+                <p>&emsp;&emsp;Setiap diskusi mengenai kongesti pasti membahas mengenai antrian. Buffer pada pada jaringan dibentuk dengan beberapa macam teknik. Dengan mengatur buffer akan meminimalisasi terjadinya kongesti dan paket yang didrop sehingga
+                    akan meningkatkan performansi jaringan. Teknik paling dasar adalah FIFO (First In First Out) dimana paket diproses sesuai dengan kedatangannya. Sehingga paket yang dating pertama adalah paket yang terlebih dahulu diproses.</p>
+            </div>
+
+
+
+        </section>
+
+        <!-- Profil -->
+        <div class="left">
+            <section class="profil">
+                <img src="img/profile2.png" alt="">
+                <ul>
+                    <li>Andi Widad Sucitra</li>
+                    <li>D121191013</li>
+                    <li>sucitraandiwidad@gmail.com</li>
+                </ul>
+            </section>
+            <section class="daftar">
+                <h4>Daftar Isi</h4>
+                <ul>
+                    <li><a href="#satu">Model Referensi TCP/IP</a></li>
+                    <li><a href="#dua">Mengapa Model Referensi dibuat berlayer</a></li>
+                    <li><a href="#tiga">Fungsi Layer Transport</a></li>
+                    <li><a href="#empat">Penjelasan tentang TCP dan prinsip kerjanya</a></li>
+                    <li><a href="#lima">Struktur segmen TCP dan fungsi masing-masing fieldnya</a></li>
+                    <li><a href="#enam">Proses Flow Control TCP</a></li>
+                    <li><a href="#tujuh">Mekanisme Pembukaan dan Penutupan hubungan komunikasi</a></li>
+                    <li><a href="#delapan">Bagaimana TCP mengatasi Kongesti (kemacetan dalam jaringan)</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&#169; 2020 by Andi Widad Sucitra</p>
+    </footer>
+</body>
+
+<script src="script.js"></script>
+
+</html>

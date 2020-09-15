@@ -166,10 +166,57 @@
         margin: 0 8px;
     }
     
-    .navbar a {
+    .navbar a,
+    .dropbtn {
         text-decoration: none;
         font-size: 8px;
         color: white;
+    }
+    
+    .dropbtn {
+        background-color: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .tri-down {
+        display: inline-block;
+        margin-left: 3px;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 8px solid white;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgb(42, 93, 202);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: white;
+        padding: 0 10px;
+        /* text-decoration: none; */
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f13a
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
     
     .sticky {
@@ -227,6 +274,10 @@
         margin: 20px auto;
     }
     
+    .materi p {
+        padding: 10px 0;
+    }
+    
     .materi p,
     .materi dl dd,
     .materi dl dt,
@@ -240,11 +291,12 @@
     .materi dl dd,
     .materi h5 {
         font-weight: bold;
-        margin-top: 20px;
+        margin-top: 25px;
+        margin-bottom: 5px;
     }
     
     .materi dl dd:first-child {
-        margin-top: 5px;
+        margin-top: 10px;
     }
     
     .materi ul li {
@@ -401,7 +453,8 @@
             display: inline-block;
             margin: 10px 15px;
         }
-        .navbar a {
+        .navbar a,
+        .dropbtn {
             text-decoration: none;
             font-size: 15px;
         }
@@ -448,9 +501,10 @@
         .materi dl dd,
         .materi h5 {
             margin-top: 24px;
+            margin-bottom: 7px;
         }
         .materi dl dd:first-child {
-            margin-top: 5px;
+            margin-top: 11px;
         }
         .materi ul li {
             margin-left: 18px;
@@ -544,7 +598,8 @@
         .navbar ul li {
             margin: 0 15px;
         }
-        .navbar a {
+        .navbar a,
+        .dropbtn {
             font-size: 15px;
         }
         .materi {
@@ -590,6 +645,7 @@
         .materi dl dd,
         .materi h5 {
             margin-top: 25px;
+            margin-bottom: 8;
         }
         .materi ul li {
             margin-left: 18px;
@@ -690,7 +746,8 @@
         .navbar ul li {
             margin: 0 20px;
         }
-        .navbar a {
+        .navbar a,
+        .dropbtn {
             font-size: 23px;
         }
         .materi {
@@ -736,6 +793,7 @@
         .materi dl dd,
         .materi h5 {
             margin-top: 25px;
+            margin-bottom: 9px;
         }
         .materi ul li {
             margin-left: 18px;
