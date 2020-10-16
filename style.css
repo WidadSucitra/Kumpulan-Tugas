@@ -275,6 +275,11 @@
         margin: 20px auto;
     }
     
+    .materi img.tgs2 {
+        width: 50%;
+        margin: 10px 25%;
+    }
+    
     .materi p {
         padding: 10px 0;
     }
@@ -283,6 +288,7 @@
     .materi dl dd,
     .materi dl dt,
     .materi ul li,
+    .materi ol li,
     .materi h5 {
         text-align: justify;
         font-size: 8px;
@@ -303,6 +309,12 @@
     .materi ul li {
         list-style: disc;
         margin-left: 15px;
+    }
+    
+    .materi ol li.spasi {
+        list-style: decimal;
+        margin-left: 15px;
+        margin-bottom: 25px;
     }
     
     .materi span {
@@ -501,6 +513,7 @@
         .materi dl dd,
         .materi dl dt,
         .materi ul li,
+        .materi ol li,
         .materi h5 {
             font-size: 12px;
             line-height: 18px;
@@ -513,7 +526,8 @@
         .materi dl dd:first-child {
             margin-top: 11px;
         }
-        .materi ul li {
+        .materi ul li,
+        .materi ol li {
             margin-left: 18px;
         }
         .materi hr {
@@ -650,6 +664,7 @@
         .materi dl dd,
         .materi dl dt,
         .materi ul li,
+        .materi ol li,
         .materi h5 {
             font-size: 15px;
             line-height: 20px;
@@ -659,7 +674,8 @@
             margin-top: 25px;
             margin-bottom: 8;
         }
-        .materi ul li {
+        .materi ul li,
+        .materi ol li {
             margin-left: 18px;
         }
         .materi hr {
@@ -804,6 +820,7 @@
         .materi dl dd,
         .materi dl dt,
         .materi ul li,
+        .materi ol li,
         .materi h5 {
             font-size: 23px;
             line-height: 33px;
@@ -813,6 +830,7 @@
             margin-top: 25px;
             margin-bottom: 9px;
         }
+        .materi ol li,
         .materi ul li {
             margin-left: 18px;
         }

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finite State Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="jumbotron"></div>
+        <div class="navbar" id="navbar">
+            <ul>
+                <li> <a href="index.html">Home</a> </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Jaringan Komputer
+                            <div class="tri-down"></div>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="tugas.html">Tugas 1</a>
+                            <a href="tugas2.html">Tugas 2</a>
+                            <a href="tugas3.html">Tugas 3</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- Materi -->
+    <div class="container">
+        <section class="materi">
+            <h1> Jaringan Komputer </h1>
+            <h2> Finite State Machine </h2>
+
+            <div class="soal" id="satu">
+                <h3> Apa itu Finite State Machine? </h3>
+                <p> &emsp;&emsp; Finite State Machine (FSM) adalah rangkaian digital yang terdiri dari 3 bagian, yaitu Next-State Logic Circuit, State Memory Register dan Output Logic Circuit. Logic Circuit adalah rangkaian hasil implementasi persamaan logika,
+                    sedangkan state memory register adalah sekumpulan Flip-Flop yang jumlahnya sama dengan jumlah bit feedback dan terkait dengan jumlah state. Misalnya jika jumlah state antara 5 sampai 8, maka jumlah feedbacknya harus terdiri dari 3
+                    Flip-Flop. Untuk sinkronisasi, State Memory Register dilengkapi dengan clock. Kecepatan clock (clock rate) tidak boleh melampaui waktu propagasi terpanjang pada Next-state logic circuit. </p>
+            </div>
+            <hr>
+
+            <div class="soal" id="dua">
+                <h3> Prinsip Kerja FSM dari Sisi Pengirim (Sender)</h3>
+                <img class="tgs2" src="img/sender.png" alt="">
+                <ol>
+                    <li class="spasi"> <span>Wait for call 0 from above</span>, state ini menunggu panggilan dari atasnya (layer aplikasi). Ketika ada perintah maka akan dijalankan fungsi berikut:
+                        <ul>
+                            <li> <span>rdt_send(data)</span> berarti data dari atas (layer aplikasi) telah diterima, maka akan dijalankan fungsi berikut</li>
+                            <li> <span>sndpkt=make_pkt(0, data, checksum)</span> berfungsi untuk membuat paket dan memberi sequence number 0 dan menyertakan checksum.</li>
+                            <li><span>udt_send</span> mengirimkan paket kesisi penerima. </li>
+                            <li> <span>start_timer</span> berarti countdown timer dimulai. </li>
+                        </ul>
+                    </li>
+                    <li class="spasi"> <span>Wait for ACK 0</span>, state ini menunggu ACK 0. Ada 3 fungsi pengecekan yang akan dijalankan yaitu:
+                        <ul>
+                            <li> <span>rdt_rcv (rcvpkt) && (corrupt (rcvpkt) || isACK(rcvpkt,1)</span> fungsi ini dijalankan jika sender menerima ACK 1 (seharusnya ACK 0). Hal ini berarti ACK yang diterima sender telah corrupt atau rusak. Sehingga tindakan
+                                selanjutnya yang dilakukan adalah ∧ atau tidak melakukan tindakan apapun.</li>
+                            <li> <span>timeout</span> berarti countdown timer yang diberikan telah habis dan state belum juga menerima ACK 0, maka akan dijalankan tindakan berikutnya yaitu
+                                <ul>
+                                    <li>udt_send (sndpkt) berfungsi untuk mengirim ulang paket.</li>
+                                    <li>start_timer berarti countdown timer kembali diulang</li>
+                                </ul>
+                            </li>
+                            <li><span>rdt_rcv (rcvpkt) && (notcorrupt (rcvpkt) && isACK(rcvpkt,0)</span> fungsi ini dijalankan jika sender telah menerima ACK 0. Hal ini berarti ACK yang diterima sender sudah benar dan tidak rusak. Sehingga tindakan selanjutnya
+                                adalah stop_timer atau menghentikan countdown timer </li>
+                        </ul>
+                    </li>
+                    <li class="spasi"> <span>Wait for call 1 from above</span>, state ini kembali menunggu panggilan dari atas (layer aplikasi), ketika ada perintah maka akan dijalankan fungsi berikut:
+                        <ul>
+                            <li> <span>rdt_rcv (rcvpkt)</span> fungsi ini hanya berjalan ketika dalam kasus premature timeout. Premature time out artinya ketika sender menerima 2 ACK pada paket yang sama kemudian salah satu ACK telah diterima maka ACK lainnya
+                                akan diabaikan dengan menjalankan fungsi ∧ (tidak melakukan tindakan apapun).</li>
+                            <li> <span>rdt_send(data)</span> berarti data dari atas (layer aplikasi) telah diterima, maka akan dijalankan fungsi berikut:</li>
+                            <ul>
+                                <li>sndpkt=make_pkt(1, data, checksum) berfungsi untuk membuat paket dan memberi sequence number 1 dan menyertakan checksum.</li>
+                                <li>udt_send mengirimkan paket kesisi penerima.</li>
+                                <li>start_timer berarti countdown timer dimulai.</li>
+                            </ul>
+                        </ul>
+                    </li>
+                    <li class="spasi"> <span>Wait for ACK 1.</span> State ini menunggu ACK 1. Ada 3 fungsi yang akan dijalankan untuk mengecek apakah paket utuh atau corrupt
+                        <ul>
+                            <li> <span>rdt_rcv (rcvpkt) && (corrupt (rcvpkt) || isACK(rcvpkt,0)</span> fungsi ini dijalankan jika sender menerima ACK 0 (seharusnya ACK 1). Hal ini berarti ACK yang diterima sender telah corrupt atau rusak. Sehingga tindakan
+                                selanjutnya yang dilakukan adalah atau tidak melakukan tindakan apapun.</li>
+                            <li> <span>sndpkt=make_pkt(0, data, checksum)</span> berfungsi untuk membuat paket dan memberi sequence number 0 dan menyertakan checksum.</li>
+                            <li><span>udt_send</span> mengirimkan paket kesisi penerima. </li>
+                            <li> <span>start_timer</span> berarti countdown timer dimulai. </li>
+                            <li> <span>timeout</span> berarti countdown timer yang diberikan telah habis dan state belum juga menerima ACK 1, maka akan dijalankan tindakan berikutnya yaitu
+                                <ul>
+                                    <li>udt_send (sndpkt) berfungsi untuk mengirim ulang paket.</li>
+                                    <li>start_timer berarti countdown timer kembali diulang</li>
+                                </ul>
+                            </li>
+                            <li><span>rdt_rcv (rcvpkt) && (notcorrupt (rcvpkt) && isACK(rcvpkt,0)</span> fungsi ini dijalankan jika sender telah menerima ACK 1. Hal ini berarti ACK yang diterima sender sudah benar dan tidak rusak. Sehingga tindakan selanjutnya
+                                adalah stop_timer atau menghentikan countdown timer </li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Siklus ini akan terus berlangsung dengan cara yang sama hingga pengiriman data selesai dilakukan. </p>
+            </div>
+            <hr>
+
+
+            <div class="soal" id="tiga">
+                <h3> Prinsip Kerja FSM dari Sisi Penerima(Receiver)</h3>
+                <img class="tgs2" src="img/penerima.jpg" alt="">
+                <ol>
+                    <li class="spasi"> <span>Wait for call 0 from below</span>,state ini menunggu perintah dari bawah (layer data link). Ketika perintah diberikan maka akan dilakukan fungsi rdt_rcv (rcvpkt) && notcorrupt (rcvpkt) && has_seq0(rcvpkt). Fungsi ini berarti
+                        sebuah paket telah diterima dari layer bawah dan paket tersebut tidak corrupt serta paket tersebut memiliki sequence number 0. Karena sequence number 0 sesuai dengan yang diminta, maka akan dilakukan tindakan selanjutnya yaitu:
+                        <ul>
+                            <li> <span>Extract(rcvpkt,data)</span> akan mengekstrak paket data</li>
+                            <li> <span>Deliver_data (data)</span> akan mengirim paket data ke layer aplikasi.</li>
+                            <li><span>sndpkt=make_pkt(ACK, 0, checksum)</span> berfungsi untuk membuat paket yang berisi ACK dan memberi sequence number 0 dan menyertakan checksum. </li>
+                            <li> <span>udt_send(sndpkt)</span> berfungsi untuk mengirim paket ke sisi sender </li>
+                        </ul>
+                    </li>
+                    <li class="spasi"> <span>Wait for 1 from below.</span>State ini menunggu perintah dari bawah (layer data link). Ketika perintah diberikan maka akan dilakukan fungsi berikut untuk mengecek apakah paket rusak atau tidak.
+                        <ul>
+                            <li> <span>rdt_rcv (rcvpkt) && corrupt (rcvpkt)</span> akan dijalankan ketika paket yang diterima corrupt, maka tindakan yang akan dijalankan adalah
+                                <ul>
+                                    <li>sndpkt=make_pkt(ACK,0,checksum) akan membuat kembali paket yang berisi ACK dan memberi sequence number 0 dan menyertakan checksum</li>
+                                    <li>udt_send(sndpkt) berfungsi untuk mengirim kembali paket ke sisi sender untuk memberitahu jika paket rusak</li>
+                                </ul>
+                            </li>
+                            <li> <span>rdt_rcv (rcvpkt) && notcorrupt && has_seq0(rcvpkt)</span> akan dijalankan jika data utuh dan tidak corrupt, maka tindakan yang akan dijalankan adalah
+                                <ul>
+                                    <li>sndpkt=make_pkt(ACK,0,checksum) akan membuat paket yang berisi ACK dan memberi sequence number 0 dan menyertakan checksum</li>
+                                    <li> udt_send(sndpkt) berfungsi untuk mengirim paket ke sisi sender untuk memberi tahu jika paket sampai dan tidak rusak</li>
+                                </ul>
+                            </li>
+                            <li><span>rdt_rcv (rcvpkt) && notcorrupt && has_seq1(rcvpkt)</span> dijalankan jika sebuah paket telah diterima dari layer bawah dan paket tersebut tidak corrupt serta memiliki sequence number 1. Maka tindakan selanjutnya adalah
+                                <ul>
+                                    <li>Extract(rcvpkt,data) akan mengekstrak paket data</li>
+                                    <li>deliver_data (data) akan mengirim paket data ke layer aplikasi</li>
+                                    <li>sndpkt=make_pkt(ACK, 1, checksum) akan membuat paket yang berisi ACK dan memberi sequence number 1 dan menyertakan checksum.</li>
+                                    <li>udt_send(sndpkt) akan mengirim paket ke sisi sender</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Siklus ini akan terus berlangsung sampai pengiriman data selesai.</p>
+            </div> <br>
+
+        </section>
+
+        <!-- Profil -->
+        <div class="left">
+            <section class="profil">
+                <img src="img/profile2.png" alt="">
+                <ul>
+                    <li>Andi Widad Sucitra</li>
+                    <li>D121191013</li>
+                    <li>sucitraandiwidad@gmail.com</li>
+                </ul>
+            </section>
+            <section class="daftar">
+                <h4>Daftar Isi</h4>
+                <ul>
+                    <li><a href="#satu">Finite State Machine</a></li>
+                    <li><a href="#dua">Prinsip Kerja FSM dari Sisi Pengirim (Sender)</a></li>
+                    <li><a href="#tiga">Prinsip Kerja FSM dari Sisi Penerima(Receiver)</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&#169; 2020 by Andi Widad Sucitra</p>
+    </footer>
+</body>
+
+<script src="script.js"></script>
+
+</html>
